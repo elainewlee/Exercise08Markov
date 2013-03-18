@@ -3,7 +3,8 @@ Exercise 08: Markov Chains (Hint: the answer is dictionaries)
 
 Introduction
 -------
-A Markov chain is a sequence of random variables X1, X2, X3, etc., with the property that the present, past, and future states are independent. Formally,
+A Markov chain is a sequence of random variables X1, X2, X3, etc., with the ls
+property that the present, past, and future states are independent. Formally,
 
     Pr(Xn+1 = x|X1 = x1, X2 = x2, ... , Xn = xn) = Pr(Xn+1 = x|Xn = xn)
 
@@ -51,14 +52,7 @@ Instead of just choosing a random pair, we start by choosing a random word on th
 
 We can improve things even further by using word pairs on the left of the arrow, instead of single words:
 
-    would you -> could (66%), like (33%)
-    you could -> you (100%)
-    could you -> in (50%), with (50%)
-    you in -> a (100%)
-    you with -> a (100%)
-    in a -> house (50%), box (50%)
-    with a -> fox (50%), mouse (50%)
-    you like -> them (50%), green (50%)
+
 
 Following the same process, again, choosing a word pair from the left, then randomly choosing a successor from the right, according to the weight:
 

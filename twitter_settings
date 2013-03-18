@@ -1,0 +1,2 @@
+
+api = twitter.Api(consumer_key='dw71KKcWg6fzxozOv5W0Q',consumer_secret='AxoPHUcRDl211E9a0PdpK6dg4ezkEYynZA79ZgO78', access_token_key='1278546524-FaFhodBWscK8KUH85Q4lzxpP4O1T6zaP4WAuY52',access_token_secret='AU0VPtJJQIyASUfirYQ0tNOZLY2UBLjNsBvTbom49Ho')

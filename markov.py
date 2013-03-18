@@ -3,6 +3,7 @@
 import sys 
 import string
 import random
+import twitter
 
 def make_chains(corpus):
     """Takes an input text as a string and returns a dictionary of
@@ -16,12 +17,18 @@ def make_chains(corpus):
     val = []
     
     # run loop through of word_list
-    for idx in range(len(word_list)- 3): #range(0,1): 
+    for idx in range(len(word_list)- 5): #range(0,1): 
 
         # create a key tuple pulling sets of values from the list based on index position
-        key = (word_list[idx], word_list[idx + 1])
-        # capture the value after the set of words 
-        val = word_list[idx + 2]
+        #key = (word_list[idx], word_list[idx + 1])
+        #val = word_list[idx + 2]
+
+        # Extra Credit 2: Modify the program to allow any number of words to use as keys, ie: choose the size of your n-gram used in your chain
+        # capture the value after the set of words. 
+        #Now key is comprised of 5 words
+        key = (word_list[idx], word_list[idx + 1], word_list[idx + 2], word_list[idx + 3], word_list[idx + 4])
+
+        val = word_list[idx + 5]
 
         # if key is in the dictionary
         if key in word_dict:
@@ -79,6 +86,11 @@ def main():
     # runs make_text function to generate random text
     random_text = make_text(chain_dict)
 
+    #Twitter Authorization settings for Ron Suess user account
+    api = twitter.Api(consumer_key='dw71KKcWg6fzxozOv5W0Q',consumer_secret='AxoPHUcRDl211E9a0PdpK6dg4ezkEYynZA79ZgO78', access_token_key='1278546524-FaFhodBWscK8KUH85Q4lzxpP4O1T6zaP4WAuY52',access_token_secret='AU0VPtJJQIyASUfirYQ0tNOZLY2UBLjNsBvTbom49Ho')
+
+    #Send tweet of random_text to twitter account
+    status = api.PostUpdate(random_text)
     print random_text
 
 if __name__ == "__main__":
